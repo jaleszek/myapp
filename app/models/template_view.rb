@@ -5,7 +5,7 @@ class TemplateView
   end
 
   def show
-    liquid = LiquidSyntaxConverter.new(@template)
+    liquid = Converters::Liquid::SyntaxConverter.new(@template)
     liquid.repeat_fragment("proposal_section", "section")
     TemplateFixer.new(liquid.html, @host).html
   end

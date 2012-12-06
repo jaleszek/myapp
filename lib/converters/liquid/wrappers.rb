@@ -1,4 +1,4 @@
-module Wrappers
+module Converters::Liquid::Wrappers
   def wrap_with_loop(html_node, resource_name)
     start_loop = "{% for #{resource_name} in #{resource_name.pluralize} %}"
     end_loop = "{% endfor %}"

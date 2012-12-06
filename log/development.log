@@ -4414,3 +4414,19 @@ Processing ProposalViewerController#show (for 127.0.0.1 at 2012-12-06 20:05:08) 
   [4;36;1mProposal Load (0.2ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals".client_id = 1) ORDER BY proposals.id DESC LIMIT 1[0m
   [4;35;1mProposalSection Load (0.2ms)[0m   [0mSELECT * FROM "proposal_sections" WHERE ("proposal_sections".proposal_id = 1) [0m
 Completed in 20ms (View: 1, DB: 0) | 200 OK [http://localhost/proposal_viewer/show/1]
+
+
+Processing ProposalViewerController#show (for 127.0.0.1 at 2012-12-06 20:19:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mProposal Load (0.2ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals".client_id = 1) ORDER BY proposals.id DESC LIMIT 1[0m
+  [4;36;1mProposalSection Load (0.2ms)[0m   [0;1mSELECT * FROM "proposal_sections" WHERE ("proposal_sections".proposal_id = 1) [0m
+Completed in 25ms (View: 2, DB: 0) | 200 OK [http://localhost/proposal_viewer/show/1]
+
+
+Processing ProposalViewerController#show (for 127.0.0.1 at 2012-12-06 20:20:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mProposal Load (0.2ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals".client_id = 1) ORDER BY proposals.id DESC LIMIT 1[0m
+  [4;36;1mProposalSection Load (0.2ms)[0m   [0;1mSELECT * FROM "proposal_sections" WHERE ("proposal_sections".proposal_id = 1) [0m
+Completed in 27ms (View: 2, DB: 1) | 200 OK [http://localhost/proposal_viewer/show/1]
