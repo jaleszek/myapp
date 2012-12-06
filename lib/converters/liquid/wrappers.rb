@@ -6,9 +6,13 @@ module Converters::Liquid::Wrappers
   end
 
   def wrap_variables(text)
-    text.gsub(/>\s*\{\S+\}\s*</) do |pattern|
+    text.gsub(/>\s*\{\w+\}\s*</) do |pattern|
       pattern.gsub!(/\{/, "{{").gsub!(/\}/, "}}")
     end
+  end
+
+  def unwrap_transport_tag(text)
+    text.gsub("<transport-tag>", "").gsub("</transport-tag>", "")
   end
 
   private
@@ -17,12 +21,8 @@ module Converters::Liquid::Wrappers
     "<transport-tag> #{text} </transport-tag>"
   end
 
-  def unwrap_transport_tag(text)
-    text.gsub("<transport-tag>", "").gsub("</transport-tag>", "")
-  end
-
   def wrap_iterator(text)
-    text.gsub(/>\s*\{\{\S+\}\}\s*</) do |pattern|
+    text.gsub(/>\s*\{\{\S\w+\}\}\s*</) do |pattern|
       pattern.sub!("_", ".")
     end
   end
