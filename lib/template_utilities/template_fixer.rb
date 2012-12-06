@@ -3,11 +3,11 @@ module TemplateUtilities
     def initialize(html, host_with_port)
       @html = Nokogiri::HTML.parse(html)
       @host = host_with_port
-      fix_relative("link", "href")
-      fix_relative("img", "src")
     end
 
-    def html
+    def as_unrelative
+      fix_relative("link", "href")
+      fix_relative("img", "src")
       @html.to_html
     end
 
