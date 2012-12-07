@@ -1,7 +1,7 @@
 class ProposalViewerController < ApplicationController
   def show
     @client = Client.find(params[:id])
-    render :inline => resource_template.render(resource_presenter.as_template_data), :nothing => true
+    render :inline => resource_template.render(resource_presenter.as_template_data)
   end
 
   private
