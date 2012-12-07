@@ -16,6 +16,6 @@ class ProposalViewerController < ApplicationController
   end
 
   def resource_template
-    @resource_template ||= Liquid::Template.parse(TemplateView.new(request).show)
+    @resource_template ||= Liquid::Template.parse(TemplateResolver.new(request).show)
   end
 end
