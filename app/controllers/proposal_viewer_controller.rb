@@ -7,10 +7,10 @@ class ProposalViewerController < ApplicationController
   private
 
   def resource_presenter(client)
-    @presenter ||= ProposalViewerPresenter.new(client)
+    @resource_presenter ||= ProposalViewerPresenter.new(client)
   end
 
   def resource_template
-    @template ||= Liquid::Template.parse(TemplateView.new(request).show)
+    @resource_template ||= Liquid::Template.parse(TemplateView.new(request).show)
   end
 end
