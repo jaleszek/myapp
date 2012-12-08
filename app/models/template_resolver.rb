@@ -1,6 +1,6 @@
 # place for managing templates
 # in the future, templates could be stored in other than File store
-# look at "Crafting Rails Applications.., Jose Vailm, Chapter 3"
+# look at "Crafting Rails Applications..,Jose Valim, Chapter 3"
 
 class TemplateResolver
   def initialize(request, template_file_path = "/public/proposal-template/index.html")
