@@ -1,6 +1,6 @@
 class ProposalViewerController < ApplicationController
   def show
-    @client = Client.find(params[:id])
+    @client = Client.find(:first, :conditions => ["id = ?", params[:id]], :include => [:proposals, {:proposals => :proposal_sections}])
 
     respond_to do |format|
       format.html do
